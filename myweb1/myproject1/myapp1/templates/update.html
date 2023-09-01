@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Project</title>
+</head>
+<body>
+    <h2>Update Student Information</h2>
+    <form method="post" action="{% url 'updatecode'%}">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Student RollNo</td>
+                <td>
+                    <input type="number" name="sturollno" value="{{stu.sturollno}}"read only/>
+                </td>
+            </tr>
+            <tr>
+                <td>Student Name</td>
+                <td>
+                    <input type="text" name="stuname" value="{{stu.stuname}}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Branch</td>
+                <td>
+                    <input type="text" name="branch" value="{{stu.branch}}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>E-mail</td>
+                <td>
+                    <input type="email" name="email" value="{{stu.email}}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <button type="submit">Update</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
